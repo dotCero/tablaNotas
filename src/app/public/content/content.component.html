@@ -1,0 +1,58 @@
+
+<div class="columns">
+    <div class="column is-two-fifths">
+        <form [formGroup]="qualificationData" (ngSubmit)="submit()">
+            <div class="field">
+                <label class="label">Nota Máxima</label>
+                <div class="control">
+                    <input class="input" type="number" placeholder="" formControlName="gradeMax">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Nota Mínima</label>
+                <div class="control">
+                    <input class="input" type="number" placeholder="" formControlName="gradeMin">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Nota Aprobación</label>
+                <div class="control">
+                    <input class="input" type="number" placeholder="" formControlName="gradeApprove">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Exigencia(%)</label>
+                <div class="control">
+                    <input class="input" type="number" placeholder="" formControlName="requirement">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Puntaje Máximo</label>
+                <div class="control">
+                    <input class="input" type="number" placeholder="" formControlName="scoreMax">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="button" type="submit" placeholder="" value="Calcular Tabla">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        <table class="table is-fullwidth is-narrow table is-hoverable">
+            <thead class="has-background-info-dark">
+            <tr>
+                <th class="has-text-info-light">
+                    Puntaje
+                </th>
+                <th class="has-text-info-light">
+                    Nota
+                </th>
+            </tr>
+            </thead>
+            <tbody class="gradingScale has-background-info-light" *ngIf="gradingScale">
+            </tbody>
+        </table>
+    </div>
+</div>
